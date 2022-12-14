@@ -278,7 +278,7 @@ main {
 
 .racesnav {
 	height: 100%;
-	width: 0;
+	width: 0%;
 	position: fixed;
 	z-index: 9999;
 	top: 0;
@@ -320,7 +320,7 @@ main {
 	color: hsl(0, 0%, 95%);
 	padding: 12% 0 20%;
 	background: linear-gradient(var(--transparentD), var(--transparentD)),
-		url("/images/zapatillas-trail-running-race-light-2.jpeg");
+		url("/src/upload/images/zapatillas-trail-running-race-light-2.jpeg");
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
@@ -352,9 +352,9 @@ main {
 		line-height: 2rem;
 		z-index: -1000;
 	}
-	.hero-content {
+	/* .hero-content {
 		/* padding: 10% 5%; */
-	}
+	/*} */
 
 	.hero h1 {
 		font-size: 3rem;
@@ -415,8 +415,8 @@ main {
 	.hero-margin {
 		max-height: 650px;
 	}
-	.video-container {
-	}
+	/* .video-container {
+	} */
 	#myVideo {
 		display: block;
 		height: 100%;
@@ -425,7 +425,7 @@ main {
 /*TRAINING SECTION	 STYLES*/
 .training {
 	width: 100%;
-	background-image: url(/images/brian-erickson-XFneC_rHR48-unsplash.jpg);
+	background-image: url(/src/upload/images/brian-erickson-XFneC_rHR48-unsplash.jpg);
 	background-position: 0px -260px;
 	background-size: center;
 }
@@ -578,7 +578,7 @@ main {
 	}
 }
 .routine-card {
-	background-image: url(/images/wallpaperbetter.com_2560x1080.jpg);
+	background-image: url(/src/upload/images/wallpaperbetter.com_2560x1080.jpg);
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -765,10 +765,10 @@ FORM STYLES */
 }
 
 @media screen and (min-width: 700px) {
-	.data {
+	/* .data {
 	}
 	.data-bkg {
-	}
+	} */
 	.iframe-container {
 		display: inline-block;
 		width: 45%;
@@ -800,7 +800,7 @@ FORM STYLES */
 /*footer-style*/
 
 .footer {
-	background-image: url(/images/BackGroundFooter.jpg);
+	background-image: url(/src/upload/images/BackGroundFooter.jpg);
 	background-size: 100% 100%;
 	background-repeat: no-repeat;
 	z-index: -1;
@@ -874,7 +874,7 @@ FORM STYLES */
 		align-items: baseline;
 		flex-wrap: nowrap;
 	}
-	.col-footer {
+	/* .col-footer {
 		/* flex-basis: min-content; */
-	}
+	/*} */
 }
