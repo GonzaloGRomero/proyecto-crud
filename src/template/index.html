@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;700&display=swap"
+			rel="stylesheet"
+		/>
+
+		<link rel="stylesheet" href="/proyecto/template/style/reset.css" />
+		<link rel="stylesheet" href="/proyecto/template/style/style.css" />
+		<script
+			src="https://kit.fontawesome.com/b06e6e3dcb.js"
+			crossorigin="anonymous"
+		></script>
+		<title>Document</title>
+	</head>
+	<body>
+		<nav>
+			<div>
+				<div class="sidenav" id="mySidenav" >
+				<a href="javascript:void(0)" class="closebtn" onclick="closeNav(),closeMyracesNav()">
+					<i class="fas fa-times"></i>
+				</a>
+				
+				<a href="#registerBtn" onclick="flag=false,openForm(flag),closeNav()">Register race</a>
+				<a href="javascript:void(0)" class="openMyracesbtn" onclick="openMyracesNav()">My races</a>
+				<a href="#">Registered runners</a>
+				<a href="#footer">Contact</a>
+				<a href="/proyecto/template/productos.html">Merch</a>
+
+				</div>
+				<div v-else class="sidenav" id="myRacesnav">
+						<a href="javascript:void(0)" class="closebtn" onclick="closeMyracesNav()">
+							<i class="fas fa-times"></i>
+						</a>
+						<div id="racesapp">
+						<tr v-for="user in users">
+							<td>{{user.id}}</td>
+                        	<td>{{user.name}}</td>
+                        	<td>{{user.lastname}}</td>
+                        	<td>{{user.race}}</td>
+						</tr>
+						</div>
+				</div>
+			</div>
+		</nav>
+
+		<div class="margin-box">
+			<div class="side-stripe">
+				<i class="fas fa-bars hamb" onclick="openNav()">
+				 <style> i:hover{cursor: pointer;}</style></i>
+				<!-- <div class="hamb-container header-items">
+					<img src="/images/icon-menu.svg" alt="" class="menu-icon hamb" />
+				</div> -->
+				<ul>
+					<li>
+						<a href="#"><i class="fab fa-instagram"></i></a>
+					</li>
+					<li>
+						<a href="#"><i class="fab fa-youtube"></i></a>
+					</li>
+					<li>
+						<a href="#"><i class="fab fa-twitter"></i></a>
+					</li>
+					<li>
+						<a href="#"><i class="fab fa-facebook-square"></i></a>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="content">
+			<header class="header">
+				<div class="logo-container header-items">
+					<img
+						src="/proyecto/template/images/logo-white.png"
+						alt=""
+						class="logo logo-container header-items"
+					/>
+				</div>
+
+				<div class="header-items brand-container">
+					<span>Brought by</span>
+					<img src="/proyecto/template/images/adidas-logo-branco.png" alt="" class="brand" />
+				</div>
+			</header>
+		</div>
+
+		<main>
+			<section class="hero">
+				<div class="hero-content">
+					<div class="hero-margin">
+						<h1>Run like a wolf and free your wild</h1>
+						<div>
+							<h3>
+								<strong>ULTRA-TRAIL HARRICANA OF CANADA</strong
+								><strong>™</strong>
+							</h3>
+							<h3>
+								Friday, Saturday and Sunday<strong>
+									September 8-9-10 2023</strong
+								><br />
+								Mont Grand-Fonds Ski Resort in La&nbsp;Malbaie, Quebec
+							</h3>
+							<p>
+								<a
+									href="https://www.eventbrite.ca/e/2023-ultra-trail-harricanatm-presented-by-the-north-face-registration-398203737097?_eboga=997720949.1662132990"
+									><i class="fas fa-bolt"></i> 2023 registrations open!</a
+								>
+							</p>
+							<p>
+								<a
+									class="cta cta-main"
+									href="https://harricana.run/resultats2022"
+									><i class="fas fa-award"></i> Race results Sportstats</a
+								>
+							</p>
+							<p>
+								An authentic trail running experience in Canada’s wild
+								backcountry. Trails dense with rugged nature and wildlife. A
+								rich ecosystem in a unique UNESCO world biosphere reserve.
+								Summits where the wind carries the scents of the St. Lawrence
+								River and the boreal forest.
+							</p>
+							<p>
+								What can you expect at Ultra-Trail Harricana du Canada™? To run
+								like a wolf and free your wild!
+							</p>
+							<p>
+								<strong
+									><a href="https://ultratrailharricana.com/en/rules-policies/"
+										>Worried about COVID? Read our refund Policy&nbsp;</a
+									></strong
+								>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="video-container"></div>
+				<video autoplay muted loop id="myVideo">
+					<source src="/proyecto/template/images/pexels-kelly-lacy-5677450.mp4" type="video/mp4" />
+				</video>
+			</section>
+			<div class="section-divisor"></div>
+
+			<section class="training">
+				<div class="training-margin">
+					<div class="training-container">
+						<div class="training-options">
+							<h1 id="race-btn">Races</h1>
+						</div>
+
+						<div class="race-btns">
+							<button
+								class="racebtn"
+								onclick="raceSelec(0),apiCall('intermediate') "
+							>
+								UTHC 125
+							</button>
+							<button
+								class="racebtn"
+								onclick="raceSelec(1),apiCall('intermediate')"
+							>
+								UTHC 80
+							</button>
+							<button
+								class="racebtn"
+								onclick="raceSelec(2),apiCall('intermediate')"
+							>
+								UTHC 65
+							</button>
+							<button
+								class="racebtn"
+								onclick="raceSelec(3),apiCall('beginner')"
+							>
+								UTHC 42
+							</button>
+							<button
+								class="racebtn"
+								onclick="raceSelec(4),apiCall('beginner')"
+							>
+								Trail 28 km
+							</button>
+						</div>
+
+						<div id="race-description">
+							 <h1 class="raceName">${races[id].race}</h1>
+					<h3 class="raceDistance">${races[id].distance}</h3>
+					<span class="raceElevation">${races[id].distance}</span>
+					<span class="raceCourse">${races[id].course}</span>
+					<span class="raceStations">${races[id].stations}</span>
+						</div>
+					</div>
+					<div class="routine-card" id="routineCard">
+						<div class="card-routine1">
+							<h1>Some excercises for this race! </h1>
+						
+							<li>
+								Name: Trail Running/Walking
+							</li>
+							<li>
+								Muscle: Quadriceps
+							</li>
+							<li>
+								Equipment: body only
+							</li>
+						<br><h3>Description</h3><br>
+ 						<p>Running or hiking on trails will get the blood pumping and heart beating almost immediately. Make sure you have good shoes. While you use the muscles in your calves and buttocks to pull yourself up a hill, the knees, joints and ankles absorb the bulk of the pounding coming back down. Take smaller steps as you walk downhill, keep your knees bent to reduce the impact and slow down to avoid falling. A 150 lb person can burn over 200 calories for 30 minutes walking uphill, compared to 175 on a flat surface. If running the trail, a 150 lb person can burn well over 500 calories in 30 minutes.</p>
+					
+						</div>
+						<!--<div class="card-routine2">
+						<h1>Some excercises for this race! </h1>
+  					<h3>Trail Running/Walking</h3>
+  					<span>quadriceps</span>
+ 				<span>body only</span>
+ 				<p>Running or hiking on trails will get the blood pumping and heart beating almost immediately. Make sure you have good shoes. While you use the muscles in your calves and buttocks to pull yourself up a hill, the knees, joints and ankles absorb the bulk of the pounding coming back down. Take smaller steps as you walk downhill, keep your knees bent to reduce the impact and slow down to avoid falling. A 150 lb person can burn over 200 calories for 30 minutes walking uphill, compared to 175 on a flat surface. If running the trail, a 150 lb person can burn well over 500 calories in 30 minutes.</p>
+					</div>
+					<div class="card-routine3">
+						<h1>Some excercises for this race! </h1>
+  					<h3>Trail Running/Walking</h3>
+  					<span>quadriceps</span>
+ 				<span>body only</span>
+ 				<p>Running or hiking on trails will get the blood pumping and heart beating almost immediately. Make sure you have good shoes. While you use the muscles in your calves and buttocks to pull yourself up a hill, the knees, joints and ankles absorb the bulk of the pounding coming back down. Take smaller steps as you walk downhill, keep your knees bent to reduce the impact and slow down to avoid falling. A 150 lb person can burn over 200 calories for 30 minutes walking uphill, compared to 175 on a flat surface. If running the trail, a 150 lb person can burn well over 500 calories in 30 minutes.</p>
+					</div>-->
+						<!-- <h1>Some excercises for this race!</h1>
+					<h3>${result[0].name}</h3>
+					<span>${result[0].muscle}</span>
+					<span id="span">${result[0].equipment}</span>
+					<p>${result[0].instructions}</p> -->
+					</div>
+				</div>
+			</section>
+			<section class="register-form">
+				<div class="register-btn-background">
+					<button class="register-btn" id="registerBtn" onclick="openForm()">
+						Register
+					</button>
+				</div>
+				<div class="register-background">
+					<form id="form">
+						<div class="form-container">
+							<label for="txtName"> Firstname </label>
+							<input
+								id="txtName"
+								type="text"
+								name="txtName"
+								placeholder="Name"
+								size="15"
+								required
+							/>
+
+							<label for="txtLastname"> Lastname: </label>
+							<input
+								id="txtLastname"
+								type="text"
+								name="txtLastname"
+								placeholder="Lastname"
+								size="15"
+								required
+							/>
+							<div>
+								<label for="txtRace"> Distance </label>
+								<select id="txtRace" name="race" >
+									<option value="UTHC 125" checked >UTHC 125</option>
+									<option value="UTCH 80">UTCH 80</option>
+									<option value="UTHC 65">UTHC 65</option>
+									<option value="UTCH 42">UTCH 42</option>
+									<option value="Trail 28km">Trail 28km</option>
+									<!--<option value="Trail 20km">Trail 20km</option>
+									<option value="Trail 10km">Trail 10km</option>
+									<option value="Trail 5km">Trail 5km</option>-->
+								</select>
+							</div>
+							<div>
+
+								<label for="txtGender"> Gender </label>
+								<select id="txtGender" name="gender" >
+									<option value="Male" checked >Male</option>
+									<option value="Female">Female</option>
+								</select>
+									<!--<label for="txtGender"><b>Female</b></label>
+										<input type="radio" id="txtGender"  name="gender" value="Female"  />
+										<label for="txtGender"><b>Male</b></label>
+										<input type="radio" id="txtGender" name="gender" value="Male"  />-->
+										
+							</div>
+
+							<label for="txtEmail"><b>Email</b></label>
+							<input
+								id="txtEmail"
+								type="text"
+								placeholder="Enter_Email@domain.com"
+								name="txtEmail"
+								required
+							/>
+
+							<label for="txtPassword"><b>Password</b></label>
+							<input
+								id="txtPassword"
+								type="password"
+								placeholder="Max 10 characters"
+								name="txtPassword"
+								required
+								minlength="6"
+								maxlength="10"
+							/>
+							<button id="submitBtn" type="submit" onclick="guardar()">Submit</button>
+						</div>
+					</form>
+				</div>
+			</section>
+
+			<section class="data">
+				<div class="data-bkg">
+					<div class="data-container">
+						<div class="iframe-container">
+							<iframe
+								width="90%"
+								height="90%"
+								src="https://www.youtube.com/embed/nlLM5wp74kI"
+								title="YouTube video player"
+								frameborder="0"
+								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+								allowfullscreen
+							></iframe>
+						</div>
+						<div class="data-border">
+							<h2>Headliners</h2>
+							<div class="data-content">
+								<p>
+									The Ultra-Trail Harricana du Canada™ is an
+									international-caliber trail-running event attended by a
+									largest pool of elite runners who want to challenge
+									themselves. Over the years, the trails have been run by
+									athletes from all Canadian provinces and more than 30
+									countries.&nbsp;
+								</p>
+							</div>
+
+							<p>
+								<a class="" href="#"
+									>Discover our Welcoming Program for star athletes</a
+								>
+							</p>
+							<p>
+								<a class="" href="#">See all elite runners</a>
+							</p>
+						</div>
+						<div class=""></div>
+					</div>
+				</div>
+			</section>
+
+			<footer class="footer">
+				<main class="fondo-footer">
+					<div class="nav-footer">
+						<div class="col-footer">
+							<h6>Races</h6>
+							<ul>
+								<li>
+									<a
+										href="#race-btn"
+										onclick="raceSelec(0),apiCall('intermediate') "
+										>UTHC 125</a
+									>
+								</li>
+								<li>
+									<a
+										href="#race-btn"
+										onclick="raceSelec(1),apiCall('intermediate') "
+										>UTCH 80</a
+									>
+								</li>
+								<li>
+									<a
+										href="#race-btn"
+										onclick="raceSelec(2),apiCall('intermediate') "
+										>UTHC 65</a
+									>
+								</li>
+								<li>
+									<a
+										href="#race-btn"
+										onclick="raceSelec(3),apiCall('intermediate') "
+										>UTCH 42</a
+									>
+								</li>
+								<li>
+									<a
+										href="#race-btn"
+										onclick="raceSelec(4),apiCall('intermediate') "
+										>Trail 28km</a
+									>
+								</li>
+								<!--<li>
+									<a href="#">Trail 20km</a>
+								</li>
+								<li>
+									<a href="#">Trail 10km</a>
+								</li>
+								<li>
+									<a href="#">Trail 5km</a>
+								</li>-->
+							</ul>
+						</div>
+						<div class="col-footer">
+							<h6>Rules and policies</h6>
+							<ul>
+								<li>
+									<a href="#">Race Rules and Entry Policies</a>
+								</li>
+								<li>
+									<a href="#">Sustainable Race</a>
+								</li>
+							</ul>
+						</div>
+						<div class="col-footer">
+							<h6>Social</h6>
+							<ul>
+								<li>
+									<a href="#">Instagram</a>
+								</li>
+								<li>
+									<a href="#">Youtube</a>
+								</li>
+								<li>
+									<a href="#">Twitter</a>
+								</li>
+								<li>
+									<a href="#">Facebook</a>
+								</li>
+							</ul>
+						</div>
+						<div class="col-footer">
+							<h6>Contact us</h6>
+							<p>
+								evenements harricana <br />
+								4435-1 rue andre-laurrendeau <br />
+								montreal,QC <br />H1Y 3R6
+							</p>
+							<p>
+								<a href="mailto:">Email@dominio.com</a>
+							</p>
+						</div>
+					</div>
+
+					<div class="banner">
+						<img src="" alt="" />
+					</div>
+					
+				</main>
+			</footer>
+		</main>
+		<script
+			src="https://code.jquery.com/jquery-3.6.1.js"
+			integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+			crossorigin="anonymous"
+		></script>
+		<script src="/proyecto/template/app/index.js"></script>
+		<script src="/proyecto/template/app/races.js"></script>
+		<script src="/proyecto/template/js/users_create.js"></script>
+		<script src="./js/users_main.js"></script>
+		<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+	</body>
+</html>
