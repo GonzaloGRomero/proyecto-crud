@@ -1,13 +1,13 @@
 // nav functions
 function openNav() {
-	document.getElementById("mySidenav").style.width = "250px";
+	document.getElementById("mySidenav").style.width = "50%";
 }
 function closeNav() {
 	document.getElementById("mySidenav").style.width = "0";
 }
 
 function openMyracesNav() {
-	document.getElementById("myRacesnav").style.width = "550px";
+	document.getElementById("myRacesnav").style.width = "60%";
 }
 
 function closeMyracesNav() {
